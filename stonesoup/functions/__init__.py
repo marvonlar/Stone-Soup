@@ -682,7 +682,7 @@ def gm_reduce_single(means, covars, weights):
         The covariance of the reduced/single Gaussian
     """
     # Normalise weights such that they sum to 1
-    weights = weights / Probability.sum(weights)
+    weights = (weights / Probability.sum(weights)).astype(float)
 
     # Cast means as a StateVectors, so this works with ndarray types
     means = means.view(StateVectors)
